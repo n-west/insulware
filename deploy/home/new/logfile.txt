@@ -1,0 +1,1076 @@
+[deviceDetect]
+vid=1111
+pid=2222
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=5
+key=1360553446
+
+[serialToNet]
+audit=medevice://ehw@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=1360553446&u=5
+pubkey=
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Earle
+lastname=West III
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1360553446
+user: 5
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+AUDIT_SESSION=1360553446
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=139.78.79.189 39563 22
+PHR_REPO=git@github.com:ehwest/medicalrecords.git
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-05-5-1360553446
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=139.78.79.189 39563 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+https://transactionalweb.com/cloud/configfile.html?s=1360553446&u=5
+SETUP GIT CLONE
+keys:
+
+/home/insulaudit/sessions/5-1360553446/remote.git
+/home/insulaudit/sessions/5-1360553446/local
+Cloning into 'local'...
+done.
+Already up-to-date.
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-1360553446/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-1360553446/vmodem?yes
+mini.py /home/insulaudit/sessions/5-1360553446/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: CMZA47CCR
+
+number of available records:
+max records: 0
+
+all records
+total records found:0
+/home/insulaudit/bin/clean_audit_work
+# On branch audit/2013-05-05-5-1360553446
+nothing to commit (working directory clean)
+?? rm /home/insulaudit/sessions/5-1360553446
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+17332 ?        00:00:00 sshd
+17333 ?        00:00:00 sh
+17334 ?        00:00:00 do_audit_for.sh
+17441 ?        00:00:00 ps
+29718 ?        00:04:15 socat
+29869 ?        00:04:13 socat
+31511 ?        00:04:10 socat
+31646 ?        00:04:04 socat
+32188 ?        00:04:14 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+no poll Sun May 5 00:37:55 UTC 2013
+no poll Sun May 5 00:38:25 UTC 2013
+successful poll Sun May 5 00:39:06 UTC 2013
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 1327), status = 0x0
+Serial connection established.
+using channel 6
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0x5b0e0494> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0x5b0e0494> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <18d474c40b5393875d5075d63aa58009fbd8c86803b9>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <01d3a93ddcf823fef75561ea5203ea78>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.228.152.120>]
+sent [IPCP ConfReq id=0x3 <addr 10.228.152.120>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.228.152.120>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.228.152.120
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:375537 errors:0 dropped:22332 overruns:0 frame:0
+          TX packets:48476 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:143280369 (136.6 MiB)  TX bytes:7006838 (6.6 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:16383 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:16383 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1321568 (1.2 MiB)  TX bytes:1321568 (1.2 MiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.228.152.120  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 972068694 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 972068694
+user: 5
+VMODEM=/home/insulaudit/sessions/5-972068694/vmodem
+AUDIT_SESSION=972068694
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=32.132.61.34 52524 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-972068694/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-972068694/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-972068694/local
+BRANCH=audit/2013-05-05-5-972068694
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-972068694/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 972068694 5
+LOGNAME=insulaudit
+SSH_CONNECTION=32.132.61.34 52524 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-972068694
+SESS_KEY=5-972068694
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+https://transactionalweb.com/cloud/configfile.html?s=972068694&u=5
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/5-972068694/remote.git
+/home/insulaudit/sessions/5-972068694/local
+Cloning into '/home/insulaudit/sessions/5-972068694/local'...
+# On branch audit/2013-05-05-5-972068694
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-972068694/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-972068694/vmodem?yes
+INCOMING: 2013-05-05
+VMODEM: /home/insulaudit/sessions/5-972068694/vmodem
+AUDIT_SESSION=972068694
+VMODEM=/home/insulaudit/sessions/5-972068694/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=32.132.61.34 52524 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-972068694/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-972068694/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-972068694/local
+BRANCH=audit/2013-05-05-5-972068694
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-972068694/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 972068694 5
+LOGNAME=insulaudit
+SSH_CONNECTION=32.132.61.34 52524 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-972068694
+SESS_KEY=5-972068694
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py /home/insulaudit/sessions/5-972068694/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: CMZA47CCR
+
+number of available records:
+max records: 0
+
+all records
+total records found:0
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-05-5-972068694 b120ef1] commit 5-972068694 2013-05-05T00:36:51
+ 1 file changed, 45 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/5-972068694
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+18603 ?        00:00:00 sshd
+18604 ?        00:00:00 sh
+18605 ?        00:00:00 do_audit_for.sh
+18689 ?        00:00:00 ps
+29718 ?        00:04:15 socat
+29869 ?        00:04:13 socat
+31511 ?        00:04:10 socat
+31646 ?        00:04:04 socat
+32188 ?        00:04:14 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=5
+key=972068694
+
+[serialToNet]
+audit=medevice://ehw@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=972068694&u=5
+pubkey=
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Earle
+lastname=West III
+successful poll Sun May 5 00:41:41 UTC 2013
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 1367), status = 0x0
+Serial connection established.
+using channel 7
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x1 <mru 1600> <auth chap MD5> <magic 0xf0d6ebeb> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0xc4393f42> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x1 <mru 1600> <auth chap MD5> <magic 0xf0d6ebeb> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0xc4393f42> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <dca279ba2acc249611a7d4a6c65ddb0fc1f93c12940b1ffcf544ada41a0a7736b256b61fb88f8d3fad>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <54375413cc3cb557cd4c6f0a0ca84073>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.232.194.204>]
+sent [IPCP ConfReq id=0x3 <addr 10.232.194.204>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.232.194.204>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.232.194.204
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:381558 errors:0 dropped:22644 overruns:0 frame:0
+          TX packets:48516 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:144253738 (137.5 MiB)  TX bytes:7042390 (6.7 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:17722 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:17722 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1421998 (1.3 MiB)  TX bytes:1421998 (1.3 MiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.232.194.204  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1809559771 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1809559771
+user: 5
+VMODEM=/home/insulaudit/sessions/5-1809559771/vmodem
+AUDIT_SESSION=1809559771
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=32.162.206.119 44582 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-1809559771/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-1809559771/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-1809559771/local
+BRANCH=audit/2013-05-05-5-1809559771
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-1809559771/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1809559771 5
+LOGNAME=insulaudit
+SSH_CONNECTION=32.162.206.119 44582 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1809559771
+SESS_KEY=5-1809559771
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+https://transactionalweb.com/cloud/configfile.html?s=1809559771&u=5
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/5-1809559771/remote.git
+/home/insulaudit/sessions/5-1809559771/local
+Cloning into '/home/insulaudit/sessions/5-1809559771/local'...
+# On branch audit/2013-05-05-5-1809559771
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-1809559771/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-1809559771/vmodem?yes
+INCOMING: 2013-05-05
+VMODEM: /home/insulaudit/sessions/5-1809559771/vmodem
+AUDIT_SESSION=1809559771
+VMODEM=/home/insulaudit/sessions/5-1809559771/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=32.162.206.119 44582 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-1809559771/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-1809559771/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-1809559771/local
+BRANCH=audit/2013-05-05-5-1809559771
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-1809559771/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1809559771 5
+LOGNAME=insulaudit
+SSH_CONNECTION=32.162.206.119 44582 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1809559771
+SESS_KEY=5-1809559771
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py /home/insulaudit/sessions/5-1809559771/vmodem
+No handlers could be found for logger "insulaudit.io"
+is open? True
+ timeout: 0.5
+Traceback (most recent call last):
+  File "/home/insulaudit/bin/mini.py", line 59, in <module>
+    port = init()
+  File "/home/insulaudit/bin/mini.py", line 28, in init
+    mini.disconnect( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 121, in disconnect
+    self.__retry_write_with_ack__( msg, RETRIES )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 134, in __retry_write_with_ack__
+    self.__ack__ = self.__requireAck__( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 157, in __requireAck__
+    raise MissingAck(i)
+insulaudit.devices.lsultramini.MissingAck: 2
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-05-5-1809559771 b605f41] commit 5-1809559771 2013-05-05T00:39:40
+ 1 file changed, 46 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/5-1809559771
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+18603 ?        00:00:00 sshd
+18804 ?        00:00:00 sshd
+18805 ?        00:00:00 sh
+18806 ?        00:00:00 do_audit_for.sh
+18912 ?        00:00:00 ps
+29718 ?        00:04:15 socat
+29869 ?        00:04:13 socat
+31511 ?        00:04:10 socat
+31646 ?        00:04:04 socat
+32188 ?        00:04:14 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+successful poll Sat Jan 1 03:35:11 UTC 2000
+Removed stale lock on ttyHS1 (pid 1370)
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 285), status = 0x0
+Serial connection established.
+using channel 1
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0x3af20662> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0x3af20662> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <b6>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <ab8f616f5572151df0fc3bcedd6e0bc2>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.233.225.28>]
+sent [IPCP ConfReq id=0x3 <addr 10.233.225.28>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.233.225.28>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.233.225.28
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3772 errors:0 dropped:243 overruns:0 frame:0
+          TX packets:229 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:665059 (649.4 KiB)  TX bytes:30597 (29.8 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:197 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:197 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:21391 (20.8 KiB)  TX bytes:21391 (20.8 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.233.225.28  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+tun6to4   Link encap:IPv6-in-IPv4  
+          inet6 addr: 2002:8b4e:4fbd::1/64 Scope:Global
+          inet6 addr: ::139.78.79.189/128 Scope:Compat
+          UP RUNNING NOARP  MTU:1472  Metric:1
+          RX packets:5 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:726 (726.0 B)  TX bytes:545 (545.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         ro-atrc.net.oks 0.0.0.0         UG    0      0        0 eth0
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 582835285 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 582835285
+user: 5
+VMODEM=/home/insulaudit/sessions/5-582835285/vmodem
+AUDIT_SESSION=582835285
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=139.78.79.189 47581 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-582835285/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-582835285/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-582835285/local
+BRANCH=audit/2013-05-05-5-582835285
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-582835285/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 582835285 5
+LOGNAME=insulaudit
+SSH_CONNECTION=139.78.79.189 47581 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-582835285
+SESS_KEY=5-582835285
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+https://transactionalweb.com/cloud/configfile.html?s=582835285&u=5
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/5-582835285/remote.git
+/home/insulaudit/sessions/5-582835285/local
+Cloning into '/home/insulaudit/sessions/5-582835285/local'...
+# On branch audit/2013-05-05-5-582835285
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-582835285/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-582835285/vmodem?yes
+INCOMING: 2013-05-05
+AUDIT_SESSION=582835285
+VMODEM=/home/insulaudit/sessions/5-582835285/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=139.78.79.189 47581 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-582835285/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-582835285/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-582835285/local
+BRANCH=audit/2013-05-05-5-582835285
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-582835285/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 582835285 5
+LOGNAME=insulaudit
+SSH_CONNECTION=139.78.79.189 47581 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-582835285
+SESS_KEY=5-582835285
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py /home/insulaudit/sessions/5-582835285/vmodem
+No handlers could be found for logger "insulaudit.io"
+is open? True
+ timeout: 0.5
+Traceback (most recent call last):
+  File "/home/insulaudit/bin/mini.py", line 59, in <module>
+    port = init()
+  File "/home/insulaudit/bin/mini.py", line 28, in init
+    mini.disconnect( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 121, in disconnect
+    self.__retry_write_with_ack__( msg, RETRIES )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 134, in __retry_write_with_ack__
+    self.__ack__ = self.__requireAck__( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 157, in __requireAck__
+    raise MissingAck(i)
+insulaudit.devices.lsultramini.MissingAck: 2
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-05-5-582835285 9cdd638] commit 5-582835285 2013-05-05T00:50:03
+ 1 file changed, 45 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/5-582835285
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+18603 ?        00:00:00 sshd
+21140 ?        00:00:00 sshd
+21141 ?        00:00:00 sh
+21142 ?        00:00:00 do_audit_for.sh
+21313 ?        00:00:00 ps
+29718 ?        00:04:15 socat
+29869 ?        00:04:13 socat
+31511 ?        00:04:10 socat
+31646 ?        00:04:04 socat
+32188 ?        00:04:14 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=5
+key=582835285
+
+[serialToNet]
+audit=medevice://ehw@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=582835285&u=5
+pubkey=
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Earle
+lastname=West III
+no poll Sat Jan 1 03:38:18 UTC 2000
+successful poll Sat Jan 1 03:38:45 UTC 2000
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 382), status = 0x0
+Serial connection established.
+using channel 2
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x1 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0x2ad56d28> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x1 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0x2ad56d28> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <e02c8c3cf3ab6b7fa5a88d2ec25d>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <cc15edc09f4c2e0455b407455042580a>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.229.255.248>]
+sent [IPCP ConfReq id=0x3 <addr 10.229.255.248>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.229.255.248>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.229.255.248
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:9962 errors:0 dropped:728 overruns:0 frame:0
+          TX packets:416 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1850834 (1.7 MiB)  TX bytes:85678 (83.6 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:1797 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1797 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:142073 (138.7 KiB)  TX bytes:142073 (138.7 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.229.255.248  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+tun6to4   Link encap:IPv6-in-IPv4  
+          inet6 addr: 2002:8b4e:4fbd::1/64 Scope:Global
+          inet6 addr: ::139.78.79.189/128 Scope:Compat
+          UP RUNNING NOARP  MTU:1472  Metric:1
+          RX packets:5 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:726 (726.0 B)  TX bytes:545 (545.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         ro-atrc.net.oks 0.0.0.0         UG    0      0        0 eth0
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    ro-atrc.net.oks 255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 150434490 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 150434490
+user: 5
+VMODEM=/home/insulaudit/sessions/5-150434490/vmodem
+AUDIT_SESSION=150434490
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=139.78.79.189 47583 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-150434490/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-150434490/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-150434490/local
+BRANCH=audit/2013-05-05-5-150434490
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-150434490/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 150434490 5
+LOGNAME=insulaudit
+SSH_CONNECTION=139.78.79.189 47583 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-150434490
+SESS_KEY=5-150434490
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+https://transactionalweb.com/cloud/configfile.html?s=150434490&u=5
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/5-150434490/remote.git
+/home/insulaudit/sessions/5-150434490/local
+Cloning into '/home/insulaudit/sessions/5-150434490/local'...
+# On branch audit/2013-05-05-5-150434490
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-150434490/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-150434490/vmodem?yes
+INCOMING: 2013-05-05
+AUDIT_SESSION=150434490
+VMODEM=/home/insulaudit/sessions/5-150434490/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=139.78.79.189 47583 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-150434490/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-150434490/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-150434490/local
+BRANCH=audit/2013-05-05-5-150434490
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-150434490/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 150434490 5
+LOGNAME=insulaudit
+SSH_CONNECTION=139.78.79.189 47583 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-150434490
+SESS_KEY=5-150434490
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py /home/insulaudit/sessions/5-150434490/vmodem
+No handlers could be found for logger "insulaudit.io"
+is open? True
+ timeout: 0.5
+Traceback (most recent call last):
+  File "/home/insulaudit/bin/mini.py", line 59, in <module>
+    port = init()
+  File "/home/insulaudit/bin/mini.py", line 28, in init
+    mini.disconnect( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 121, in disconnect
+    self.__retry_write_with_ack__( msg, RETRIES )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 134, in __retry_write_with_ack__
+    self.__ack__ = self.__requireAck__( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 157, in __requireAck__
+    raise MissingAck(i)
+insulaudit.devices.lsultramini.MissingAck: 2
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-05-5-150434490 0cc1ec0] commit 5-150434490 2013-05-05T00:53:36
+ 1 file changed, 45 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/5-150434490
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+18603 ?        00:00:00 sshd
+21923 ?        00:00:00 sshd
+21924 ?        00:00:00 sh
+21925 ?        00:00:00 do_audit_for.sh
+22096 ?        00:00:00 ps
+29718 ?        00:04:15 socat
+29869 ?        00:04:13 socat
+31511 ?        00:04:10 socat
+31646 ?        00:04:04 socat
+32188 ?        00:04:14 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=5
+key=150434490
+
+[serialToNet]
+audit=medevice://ehw@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=150434490&u=5
+pubkey=
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Earle
+lastname=West III
+successful poll Sat Jan 1 03:43:14 UTC 2000
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 435), status = 0x0
+Serial connection established.
+using channel 3
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x2 <mru 1600> <auth chap MD5> <magic 0x4d5ed3d3> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0xd46648ff> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x2 <mru 1600> <auth chap MD5> <magic 0x4d5ed3d3> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0xd46648ff> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <72>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <6aeda7f35bedf0ef8e05e6289dd70a33>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.87.15.240>]
+sent [IPCP ConfReq id=0x3 <addr 10.87.15.240>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.87.15.240>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.87.15.240
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:17877 errors:0 dropped:1270 overruns:0 frame:0
+          TX packets:960 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3310597 (3.1 MiB)  TX bytes:292630 (285.7 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3739 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3739 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:290153 (283.3 KiB)  TX bytes:290153 (283.3 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.87.15.240  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+tun6to4   Link encap:IPv6-in-IPv4  
+          inet6 addr: 2002:8b4e:4fbd::1/64 Scope:Global
+          inet6 addr: ::139.78.79.189/128 Scope:Compat
+          UP RUNNING NOARP  MTU:1472  Metric:1
+          RX packets:5 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:726 (726.0 B)  TX bytes:545 (545.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    139.78.79.254   255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    139.78.79.254   255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+successful poll Sat Jan 1 03:47:44 UTC 2000
+Removed stale lock on ttyHS1 (pid 438)
+Script /usr/sbin/chat -V -f /etc/ppp/icon322-chat finished (pid 332), status = 0x0
+Serial connection established.
+using channel 1
+Using interface ppp0
+Connect: ppp0 <--> /dev/ttyHS1
+rcvd [LCP ConfReq id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+sent [LCP ConfReq id=0x1 <asyncmap 0x0> <magic 0x733e033a> <pcomp> <accomp>]
+sent [LCP ConfAck id=0x2 <mru 1600> <auth chap MD5> <magic 0xa43e4e26> <asyncmap 0x0> <pcomp> <accomp>]
+rcvd [LCP ConfAck id=0x1 <asyncmap 0x0> <magic 0x733e033a> <pcomp> <accomp>]
+rcvd [CHAP Challenge id=0x1 <905cfc4c83db1b0fd5d8fd5eb22d0881735040e08b310c80>, name = "TTPCom GPRS"]
+sent [CHAP Response id=0x1 <f45de152fa64011df200c1e3fe9bf2b7>, name = "ISP@CINGULAR1.COM"]
+rcvd [CHAP Success id=0x1 "TTP Com PPP - Password Verified OK"]
+CHAP authentication succeeded: TTP Com PPP - Password Verified OK
+CHAP authentication succeeded
+sent [CCP ConfReq id=0x1 <deflate 15> <deflate(old#) 15> <bsd v1 15>]
+sent [IPCP ConfReq id=0x1 <compress VJ 0f 01> <addr 0.0.0.0>]
+rcvd [LCP ProtRej id=0x0 80 fd 01 01 00 0f 1a 04 78 00 18 04 78 00 15 03 2f 32]
+Protocol-Reject for 'Compression Control Protocol' (0x80fd) received
+rcvd [IPCP ConfRej id=0x1 <compress VJ 0f 01>]
+sent [IPCP ConfReq id=0x2 <addr 0.0.0.0>]
+rcvd [IPCP ConfReq id=0x1 <addr 10.0.0.1>]
+sent [IPCP ConfAck id=0x1 <addr 10.0.0.1>]
+rcvd [IPCP ConfNak id=0x2 <addr 10.36.200.25>]
+sent [IPCP ConfReq id=0x3 <addr 10.36.200.25>]
+rcvd [IPCP ConfAck id=0x3 <addr 10.36.200.25>]
+replacing old default route to eth0 [139.78.79.254]
+local  IP address 10.36.200.25
+remote IP address 10.0.0.1
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:139.78.79.189  Bcast:139.78.79.255  Mask:255.255.252.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:4713 errors:0 dropped:303 overruns:0 frame:0
+          TX packets:551 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:877672 (857.1 KiB)  TX bytes:120649 (117.8 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:612 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:612 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:52740 (51.5 KiB)  TX bytes:52740 (51.5 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.36.200.25  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+tun6to4   Link encap:IPv6-in-IPv4  
+          inet6 addr: 2002:8b4e:4fbd::1/64 Scope:Global
+          inet6 addr: ::139.78.79.189/128 Scope:Compat
+          UP RUNNING NOARP  MTU:1472  Metric:1
+          RX packets:5 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:726 (726.0 B)  TX bytes:545 (545.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         *               0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        *               255.255.255.255 UH    0      0        0 ppp0
+139.78.76.0     *               255.255.252.0   U     0      0        0 eth0
+139.78.79.254   *               255.255.255.255 UH    0      0        0 eth0
+139.78.100.1    139.78.79.254   255.255.255.255 UGH   0      0        0 eth0
+139.78.200.1    139.78.79.254   255.255.255.255 UGH   0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+no poll Sat Jan 1 00:06:20 UTC 2000
+no poll Sat Jan 1 00:09:15 UTC 2000
+no poll Sat Jan 1 00:09:48 UTC 2000
+no poll Sat Jan 1 00:10:12 UTC 2000
+no poll Sat Jan 1 00:10:37 UTC 2000
+no poll Sat Jan 1 00:18:43 UTC 2000
