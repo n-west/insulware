@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+while true ; do
+  echo "scraping sms"
+  ./scrape_sms.py
+  sleep 10
+done
+
+#####
+# EOF

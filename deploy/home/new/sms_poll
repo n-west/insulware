@@ -1,26 +1,31 @@
 #!/bin/sh
-#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PYTHONPATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PYTHONPATH
 
-ADDR=`python /usr/bin/parseSMS.py | grep https |tail -1 `
-LOGFILE=$LOGFILE
+SMSCONTENT=`grep STR /home/new/sms_history.txt |tail -1 `
+
+LOG_FILE="/home/new/logfile.txt"
+CONFIG_FILE="/home/new/smsconfigfile.txt"
 echo $ADDR
 if [ -z ${ADDR} ] 
   then
   D=`date`
   echo no poll ${D}
-  echo no poll ${D} >> $LOGFILE
+  echo no poll ${D} >> $LOG_FILE
   else
   D=`date`
   echo successful poll ${D} 
-  echo successful poll ${D} >> $LOGFILE
-  pon icon322 >> $LOGFILE
-  ifconfig >> $LOGFILE
-  route >> $LOGFILE
-  cp /etc/master.resolv.conf /etc/resolv.conf
+  echo successful poll ${D} >> $LOG_FILE
+  pon icon322 >> $LOG_FILE
+  ifconfig >> $LOG_FILE
+  route >> $LOG_FILE
+  cp /home/root/master.resolv.conf /etc/resolv.conf
   ping -c2 google.com
   ping -c2 transactionalweb.com
-  curl -k ${ADDR} > /home/new/smsconfigfile.txt
+  curl -k ${ADDR} > $CONFIG_FILE
+  cat $CONFIG_FILE
+  session_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.key)
+  user_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.userid)
+  forward_stick $session_id $user_id | tee -a logfile.txt
   poff
-  cat /home/new/smsconfigfile.txt >> logfile.txt
-  cat /home/new/smsconfigfile.txt
+  cat $CONFIG_FILE >> $LOG_FILE
 fi
