@@ -3,7 +3,7 @@ Description=On boot, poll for any incoming SMS
 
 [Service]
 Type=oneshot
-ExecStart=/home/new/poll_sms
+ExecStart=/home/new/scrape_sms.py
 
 [Install]
 WantedBy=multi-user.target

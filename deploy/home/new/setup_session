@@ -1,0 +1,14 @@
+#!/bin/bash
+
+CONFIG_FILE=${1-'good.config'}
+PATH=$PATH:.
+
+echo setting up $session_id
+echo setting up $user_id
+# pon
+session_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.key)
+user_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.userid)
+forward_stick $session_id $user_id | tee -a logfile.txt
+# poff
+#####
+# EOF

@@ -1,7 +1,8 @@
 #!/bin/sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PYTHONPATH
 
-ADDR=`python /usr/bin/parseSMS.py | grep https |tail -1 `
+SMSCONTENT=`grep STR /home/new/sms_history.txt |tail -1 `
+
 LOG_FILE="/home/new/logfile.txt"
 CONFIG_FILE="/home/new/smsconfigfile.txt"
 echo $ADDR
