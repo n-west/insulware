@@ -1,0 +1,43 @@
+# config for connecting to att 3g via GlobeTrotter Icon 322
+# print a bunch of useful stuff
+debug
+# the serial port to use
+/dev/ttyHS1
+#Baudrate
+115200
+
+# If i timeout or dont use it for <x> seconds close it
+idle 7200
+
+# Prevent the device from being used by others
+# I may not really want this, but it seems safe
+# it will prevent SMS from working while online
+lock
+
+# Hardware handshake, not totally sure
+crtscts
+# Treat the dvice likea modem (it is one, afet all)
+modem
+
+# Allow any user to use the connection
+noauth
+# route traffic through ppp0 by default
+replacedefaultroute
+defaultroute
+# uh, not really sure. Get an IP from net I think.
+noipdefault
+
+# Use this chat script and print the cruft
+connect "/usr/sbin/chat -V -f /etc/ppp/beagle-chat"
+# this prints a bunch of stuff to stdio
+updetach
+
+# This will cause DNS servers to obe printed.
+# does not enable them for me.
+# usepeerdns
+# authenticate with ATT
+user ISP@CINGULAR1.COM
+password CINGULAR1
+
+# disable compression
+# novj

@@ -1,0 +1,9 @@
+[Unit]
+Description=Monitor Mode Setup for insulware
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/systemd/scripts/monitor-mode.sh
+
+[Install]
+WantedBy=multi-user.target
