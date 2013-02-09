@@ -24,7 +24,7 @@ def readConfigFile(fileLocation):
 def messageSanitizer(messageString):
     '''
     Expect something along the lines of:
-    FRM:Nathan West \nSUBJ:config\nMSG:nathan=awesome;stuff=hot;curry=tasty\r\n
+    FRM:Nathan West \nSUBJ:config\nMSG:CMD URI\r\n
     return a dict with keys: sender, subject, message
     '''
     qar = re.match('FRM:(?P<sender>.*)\n'+ # match sender
@@ -65,6 +65,31 @@ def parseConfigSMS(sms, config):
         print settingList
         config[settingList[0]] = settingList[1]
     return config
+
+def parseCommandSMS(sms):
+    '''
+    Receive command and uri through an SMS and return a dict with cmd, uri
+
+    received format:
+    cmd uri
+    '''
+    instruction = dict()
+    splitSMS = sms.split(' ',1) # break up cmd and uri by the first space
+    instruction['command'] = splitSMS[0] 
+    instruction['resource'] = splitSMS[1]
+    return instruction
+    
+def fetch(uri):
+    ''' fetch a uri with curl, return the filename '''
+    # This is hacky, but I don't really like this anyway...
+    fileName = uri.split('/')[-1].split('?')[0]
+    call("curl %s > /home/new/%s" % (url, fileName)
+    return fileName
+
+def execute(fileName):
+    ''' given a fileName that should exist, run it '''
+    call("./home/new/%s" % fileName)
+    
 
 def writeConfigFile(configFileLocation, configs):
     '''
@@ -109,7 +134,21 @@ for message in unreadSMSList.messageList:
     authenticated = authenticateSMSMaster(message['message'])
     assert authenticated == True, "Warning, unauthenticated text!"
     # 2) parse message
-    newConfigs = parseConfigSMS(message['message'], config=configs)
+    instruction = parseCommandSMS(message['message'])
+    
+    # 3) act on instruction
+    if instruction['command'] == 'STR':
+        # curl the file and save in home dir
+        fetch(instruction['resource'])
+    elif instruction['command'] == 'EXEC1':
+        # curl the file and save in home dir
+        fileName = fetch(instruction['resource'])
+        # execute the file
+        execute(fileName)
+    elif instruction['command'] == 'EXEC':
+        # execute the file
+        execute(fileName)
+    else:
+        # what to do if the instruction is unknown?
+        pass
 
-# 3) store results
-writeConfigFile(configFile, configs)
