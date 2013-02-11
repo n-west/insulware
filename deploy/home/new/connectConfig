@@ -10,5 +10,5 @@ user_id=nathan
 key_loc=0123456789
 
 [serialToNet]
-remote_addr=localhost
-remote_port=9001
+addr=localhost
+port=9001

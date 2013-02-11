@@ -8,9 +8,8 @@ conf = 'connectConfig'
 
 # detectDevices vis, pid
 section = 'deviceDetect'
-deviceDetect = readConf.parseConfig(conf, section, ["vid", "pid"])
-# output = subprocess.call('detectDevices', configs["vid"], configs["pid"])
-print deviceDetect
+deviceDetect = readConf.parseConfig(conf, section, ["vid", "pid"] )
+# dede_output = subprocess.Popen(['detectDevices', configs["vid"], configs["pid"] ], stdout=subprocess.PIPE)
 
 
 # requestResources dest, port, page, user, key, vid, pid
@@ -18,13 +17,27 @@ section = 'resourceRequest'
 options = ['addr', 'port', 'page', 'user_id', 'key_loc' ]
 
 resourceRequest = readConf.parseConfig(conf, section, options)
+# hrm, so this requires cd to be /home/new
 requestArgs = "./requestResources"
 for arg in options:
     requestArgs += " %s"%resourceRequest[arg]
+# So this is kind of a hassle... I want to send a vid/pid too
+# I'm not sure it's a great idea or not, but it seems easier to
+# remove i later rather than add later if I decide I want it
 requestCommand = requestArgs + " %s %s"%(deviceDetect['vid'], deviceDetect['pid'])
-output = subprocess.Popen(requestCommand.split(" ") , stdout=subprocess.PIPE )
+rere_output = subprocess.Popen(requestCommand.split(" ") ),  stdout=subprocess.PIPE )
 
-print "The output is %s"%output.stdout.read()
-
+print "baud rate: %s"%rere_output.stdout.read()
+# The output could be "access=denied", so need to handle access
+# approval instead of blindly plodding ahead
 
 # serialToNet port, baud, addr, port
+section = 'serialToNet'
+options = ['addr', 'port']
+remote_conf = readConf.parseConfig(conf, section, options)
+sese_output = subprocess.Popen(['./serialToNet', 
+            remote_conf['addr'], remote_conf['port']] )
+# Nothing to do here, all done?
+
+##
+# EOF
