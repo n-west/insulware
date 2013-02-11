@@ -28,7 +28,7 @@ defaultroute
 noipdefault
 
 # Use this chat script and print the cruft
-connect "/usr/sbin/chat -V -f /etc/ppp/beagle-chat"
+connect "/usr/sbin/chat -V -f /etc/ppp/icon322-chat"
 # this prints a bunch of stuff to stdio
 updetach
 

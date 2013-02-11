@@ -1,0 +1,27 @@
+#!/bin/sh
+# curl a web page with a uri indicating whatever we know 
+# about a connected device. Maybe fethc USB vid/pid?
+#
+# receive a response with some stuff to use: baud rate,
+# maybe a server/ip to connect to?
+# and maybe a "READY"
+
+DEST=${1}
+PORT=${2}
+PAGE=${3}
+USER=${4}
+KEY=${5}
+VID=${6}
+PID=${7}
+
+CURLCMD="curl http://${DEST}:${PORT}/${PAGE}?user=${USER}&key=${KEY}&vid=${VID}&pid=${PID}"
+# echo ${CURLCMD}
+RESP=`${CURLCMD}`
+
+echo ${RESP} | gawk -F= "BEGIN{RS=\";\"} /baud=/{ print \$2 }"
+# an example response:
+# access=granted;baud=9600
+# RS is a ;
+# FS is =
+# print the baud rate
+

@@ -1,3 +1,3 @@
 '' AT
-'OK' AT+CFUN=1
-'OK' ATD*99***1#
+'' AT+CFUN=1
+'' ATD*99***1#

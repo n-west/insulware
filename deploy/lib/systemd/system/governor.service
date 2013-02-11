@@ -3,7 +3,7 @@ Description=Monitor Mode Setup for insulware
 
 [Service]
 Type=oneshot
-ExecStart=/usr/lib/systemd/scripts/monitor-mode.sh
+ExecStart=/usr/bin/cpufreq-set --governor powersave
 
 [Install]
 WantedBy=multi-user.target

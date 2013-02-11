@@ -1,6 +1,0 @@
-# http://beaglebone.cameon.net/home/set-cpu-speed
-# wonder what conservative is
-cpufreq-set --governor powersave
-
-# don't know if this is strictly necessary, but cant hurt
-modprobe hso

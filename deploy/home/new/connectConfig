@@ -1,2 +1,14 @@
-stuff=hot
-nathan=awesome
+[deviceDetect]
+vid=foo
+pid=bar
+
+[resourceRequest]
+remote_addr=localhost
+port_addr=80
+page=audit.php
+user_id=nathan
+key_loc=key
+
+[serialToNet]
+remote_addr=localhost
+remote_port=9001

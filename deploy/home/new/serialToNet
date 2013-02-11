@@ -1,0 +1,40 @@
+#/bin/sh
+# Everything required to connect an arbitrary serial port to a secured TCP socket
+# Parameters:
+SERIAL_PORT="${1}"
+BAUD_RATE="${2}"
+HOST_ADDR="${3}"
+HOST_PORT="${4}"
+
+# Implementation ideas:
+# http://www.dest-unreach.org/socat/doc/socat-exec.html
+# https://github.com/bewest/decoding-carelink/blob/26d9036febee8196fb7b9f49b5f6c02ecd29ee0a/bin/socat_forward_stick.sh
+
+# a note about ssh local port forwarding:
+# http://magazine.redhat.com/2007/11/06/ssh-port-forwarding/
+# an ssh version of this would be wild (or just use this!)
+# http://www.dest-unreach.org/socat/contrib/socat-rfc2217.html
+ssh -N -L4161:${HOST_ADDR}:${HOST_PORT} ${HOST_ADDR} &
+# a non-interactive shell should be used, and we want to send to the wild
+# so we can continue with the rest of the script
+echo ${SSH}
+sleep 1 # it's important to give ssh time to connect!
+
+SOCAT=$(which socat)
+BLOCK_SIZE=""
+ADDR1="FILE:$SERIAL_PORT,nonblock,b$BAUD_RATE,raw"
+# ADDR1="-" #use stdio for testing
+ADDR2="TCP:localhost:4161"
+# ADDR2="FILE:carelink.ttyUSB0,b9600,raw"
+# $ socat pty,link=$HOME/dev/vmodem0,waitslave tcp:modem-server:54321
+SOCAT_ARGS="${BLOCK_SIZE} ${ADDR1} ${ADDR2}"
+
+echo "$SOCAT $SOCAT_ARGS"
+$SOCAT $SOCAT_ARGS
+
+kill %ssh #not sure if this is a bashism, but we need to kill the port forward
+# to free up resources
+# http://stackoverflow.com/questions/2694588/fork-two-processes-and-kill-the-second-when-the-first-is-done
+
+#####
+# EOF

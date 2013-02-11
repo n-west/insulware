@@ -1,0 +1,12 @@
+#!/bin/sh
+
+DEST="localhost"
+PORT=80
+PAGE="audit.php"
+USER="nathan"
+KEY=0123456789
+VID=1111
+PID=2222
+
+./requestResources $DEST $PORT $PAGE $USER $KEY $VID $PID
+
