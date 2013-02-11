@@ -1,0 +1,30 @@
+#!/usr/bin/python
+# send a medical device to the cloud (cloudify!)
+
+import readConf
+import subprocess
+
+conf = 'connectConfig'
+
+# detectDevices vis, pid
+section = 'deviceDetect'
+deviceDetect = readConf.parseConfig(conf, section, ["vid", "pid"])
+# output = subprocess.call('detectDevices', configs["vid"], configs["pid"])
+print deviceDetect
+
+
+# requestResources dest, port, page, user, key, vid, pid
+section = 'resourceRequest'
+options = ['addr', 'port', 'page', 'user_id', 'key_loc' ]
+
+resourceRequest = readConf.parseConfig(conf, section, options)
+requestArgs = "./requestResources"
+for arg in options:
+    requestArgs += " %s"%resourceRequest[arg]
+requestCommand = requestArgs + " %s %s"%(deviceDetect['vid'], deviceDetect['pid'])
+output = subprocess.Popen(requestCommand.split(" ") , stdout=subprocess.PIPE )
+
+print "The output is %s"%output.stdout.read()
+
+
+# serialToNet port, baud, addr, port

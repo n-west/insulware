@@ -1,13 +1,13 @@
 [deviceDetect]
-vid=foo
-pid=bar
+vid=1111
+pid=2222
 
 [resourceRequest]
-remote_addr=localhost
-port_addr=80
+addr=localhost
+port=80
 page=audit.php
 user_id=nathan
-key_loc=key
+key_loc=0123456789
 
 [serialToNet]
 remote_addr=localhost
