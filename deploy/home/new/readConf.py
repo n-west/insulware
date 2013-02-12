@@ -1,11 +1,7 @@
 #!/usr/bin/python
 
 import ConfigParser
-from optparse import OptionParser
-
-
-
-    
+import sys 
 
 def parseConfig(f, section, attrList):
     ''' 
@@ -22,16 +18,13 @@ def parseConfig(f, section, attrList):
 
 
 if __name__ == "__main__":
-    parser = OptionParser()
-    parser.add_option("-f", "--file", dest="f", default="connectConfig", help="path to config file")
-    parser.add_option("-s", "--section",  dest="section", default="main",
-                    help="section to read from")
-    (opts, args) = parser.parse_args()
-    f = opts.f
-    section = opts.section
+    args = sys.argv
+    f = args[1]
+    section = args[2]
     #attrs = args
     #attrList = attrs.split(' ')
-    s = parseConfig(f, section, args)
+    confArgs = args[3:-1]
+    s = parseConfig(f, section, confArgs)
     for setting in args:
         print(s[setting]),
     

@@ -83,7 +83,7 @@ def fetch(uri):
     ''' fetch a uri with curl, return the filename '''
     # This is hacky, but I don't really like this anyway...
     fileName = uri.split('/')[-1].split('?')[0]
-    call("curl %s > /home/new/%s" % (url, fileName)
+    call("curl %s > /home/new/%s" % (url, fileName) )
     return fileName
 
 def execute(fileName):

@@ -18,7 +18,7 @@ CURLCMD="curl http://${DEST}:${PORT}/${PAGE}?user=${USER}&key=${KEY}&vid=${VID}&
 # echo ${CURLCMD}
 RESP=`${CURLCMD}`
 
-echo ${RESP} | gawk -F= "BEGIN{RS=\";\"} /baud=/{ print \$2 }"
+echo ${RESP} | awk -F= "BEGIN{RS=\";\"} /baud=/{ print \$2 }"
 # an example response:
 # access=granted;baud=9600
 # RS is a ;
