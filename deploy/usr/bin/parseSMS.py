@@ -1,6 +1,5 @@
 from pymodem import Modem
 import pymodem.commands.at as at
-import logging
 import re
 
 ################################
@@ -27,6 +26,7 @@ def messageSanitizer(messageString):
     FRM:Nathan West \nSUBJ:config\nMSG:CMD URI\r\n
     return a dict with keys: sender, subject, message
     '''
+    print messageString
     qar = re.match('FRM:(?P<sender>.*)\n'+ # match sender
             'SUBJ:(?P<subject>.*)\n'+ # grab the subject
             'MSG:(?P<message>.*\n)', # the rest is the message
@@ -122,12 +122,11 @@ assert sanity.rval == 1, "MODEM IS NOT WORKING"
 modem.AT(at.cfun(fun=1) )
 
 # 0) load existing results (mainly to avoid wiping out stuff
-configs = readConfigFile(configFile)
+# configs = readConfigFile(configFile)
 
 unreadSMSList = modem.AT( at.cmgl(stat="REC UNREAD") )
 
 for message in unreadSMSList.messageList:
-    logging.debug("Parsing Unread Message")
     # 0.5) sanitize
     messageData = messageSanitizer(message['message'])
     # 1) authenticate sender

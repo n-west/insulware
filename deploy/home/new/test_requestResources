@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEST="localhost"
+DEST="commlabserver1.ceat.okstate.edu"
 PORT=80
 PAGE="audit.php"
 USER="nathan"
