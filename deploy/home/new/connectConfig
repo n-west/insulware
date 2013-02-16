@@ -3,12 +3,15 @@ vid=1111
 pid=2222
 
 [resourceRequest]
-addr=localhost
+addr=bewest.io
 port=80
 page=audit.php
 user_id=nathan
 key_loc=0123456789
 
 [serialToNet]
-addr=localhost
+addr=bewest.io
 port=9001
+
+[registration]
+addr=bewest.io

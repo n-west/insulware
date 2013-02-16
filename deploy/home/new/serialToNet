@@ -14,11 +14,12 @@ HOST_PORT="${4}"
 # http://magazine.redhat.com/2007/11/06/ssh-port-forwarding/
 # an ssh version of this would be wild (or just use this!)
 # http://www.dest-unreach.org/socat/contrib/socat-rfc2217.html
-ssh -y -N -L 4161:${HOST_ADDR}:${HOST_PORT} ${HOST_ADDR} &
+ssh -y -N -L 4161:${HOST_ADDR}:bewest@127.0.0.1 ${HOST_ADDR} &
+
 # a non-interactive shell should be used, and we want to send to the wild
 # so we can continue with the rest of the script
 echo ${SSH}
-sleep 1 # it's important to give ssh time to connect!
+sleep 5 # it's important to give ssh time to connect!
 
 SOCAT=$(which socat)
 BLOCK_SIZE=""
