@@ -1,5 +1,8 @@
+#!/usr/bin/python
+
 from pymodem import Modem
 import pymodem.commands.at as at
+import subprocess
 import re
 
 ################################
@@ -31,7 +34,8 @@ def messageSanitizer(messageString):
             'SUBJ:(?P<subject>.*)\n'+ # grab the subject
             'MSG:(?P<message>.*\n)', # the rest is the message
             messageString )
-    return qar
+    print qar.groupdict()
+    return qar.groupdict()
 
 def authenticateSMSMaster(blob):
     '''
@@ -77,13 +81,19 @@ def parseCommandSMS(sms):
     splitSMS = sms.split(' ',1) # break up cmd and uri by the first space
     instruction['command'] = splitSMS[0] 
     instruction['resource'] = splitSMS[1]
+    print 'L82;print cmd'
+    print instruction['command'] + '::::' + instruction['resource']
     return instruction
     
 def fetch(uri):
     ''' fetch a uri with curl, return the filename '''
     # This is hacky, but I don't really like this anyway...
+    uri = uri.strip()
     fileName = uri.split('/')[-1].split('?')[0]
-    call("curl %s > /home/new/%s" % (url, fileName) )
+    print uri
+    print fileName
+    with open("/home/nathan/%s"%fileName, 'w') as config_file:
+            subprocess.Popen(["curl", uri], stdout=config_file)
     return fileName
 
 def execute(fileName):
@@ -120,6 +130,7 @@ assert sanity.rval == 1, "MODEM IS NOT WORKING"
 
 # Turn on the RX/TX
 modem.AT(at.cfun(fun=1) )
+modem.AT(at.cmgf(mode=1) ) # text mode
 
 # 0) load existing results (mainly to avoid wiping out stuff
 # configs = readConfigFile(configFile)
@@ -127,13 +138,15 @@ modem.AT(at.cfun(fun=1) )
 unreadSMSList = modem.AT( at.cmgl(stat="REC UNREAD") )
 
 for message in unreadSMSList.messageList:
+    print 'L133:printing message:'
+    print message['message']
     # 0.5) sanitize
     messageData = messageSanitizer(message['message'])
     # 1) authenticate sender
     authenticated = authenticateSMSMaster(message['message'])
     assert authenticated == True, "Warning, unauthenticated text!"
     # 2) parse message
-    instruction = parseCommandSMS(message['message'])
+    instruction = parseCommandSMS(messageData['message'])
     
     # 3) act on instruction
     if instruction['command'] == 'STR':
@@ -151,3 +164,5 @@ for message in unreadSMSList.messageList:
         # what to do if the instruction is unknown?
         pass
 
+# clean up (turn off rx/tx)
+modem.AT(at.cfun(fun=4) )
