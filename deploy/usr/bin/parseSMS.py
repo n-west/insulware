@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from pymodem import Modem
-import pymodem.commands.at as at
+from cmgpy import Modem
+import cmgpy.commands.at as at
 import subprocess
 import re
 
