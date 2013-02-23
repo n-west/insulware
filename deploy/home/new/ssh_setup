@@ -1,0 +1,17 @@
+#!/bin/sh
+# SSH Setup for auditing medical devices
+# Author: Nathan West
+# 
+# Creates new ssh key and reports it to auditing mothership
+#
+
+# When dropbear creates a key there's mp pub key file created
+# it prints the pub key portion to stdout with a bunch of cruft
+# stdout looks something like this
+# "
+# Public key portion is:
+# ssh-rsa $(random rsa key junk) user@host
+# Fingerprint: md5 $(hex fingerprint)
+# "
+# This uses gawk to create the pub file along with the keyfile
+dropbear -t rsa -f /home/new/auditingKey | awk '/ssh/ {print $0}' > auditingKey.pub

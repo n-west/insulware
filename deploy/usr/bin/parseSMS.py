@@ -29,12 +29,10 @@ def messageSanitizer(messageString):
     FRM:Nathan West \nSUBJ:config\nMSG:CMD URI\r\n
     return a dict with keys: sender, subject, message
     '''
-    print messageString
     qar = re.match('FRM:(?P<sender>.*)\n'+ # match sender
             'SUBJ:(?P<subject>.*)\n'+ # grab the subject
             'MSG:(?P<message>.*\n)', # the rest is the message
             messageString )
-    print qar.groupdict()
     return qar.groupdict()
 
 def authenticateSMSMaster(blob):
@@ -62,8 +60,6 @@ def parseConfigSMS(sms, config):
     '''
     configList = sms.split(';')
     for setting in configList:
-        print "setting "
-        print setting
         settingList = setting.split('=')
         print "settingList: "
         print settingList
@@ -81,8 +77,8 @@ def parseCommandSMS(sms):
     splitSMS = sms.split(' ',1) # break up cmd and uri by the first space
     instruction['command'] = splitSMS[0] 
     instruction['resource'] = splitSMS[1]
-    print 'L82;print cmd'
-    print instruction['command'] + '::::' + instruction['resource']
+    # print 'L82;print cmd'
+    # print instruction['command'] + '::::' + instruction['resource']
     return instruction
     
 def fetch(uri):
@@ -90,10 +86,10 @@ def fetch(uri):
     # This is hacky, but I don't really like this anyway...
     uri = uri.strip()
     fileName = uri.split('/')[-1].split('?')[0]
-    print uri
-    print fileName
+    # print uri
+    # print fileName
     with open("/home/nathan/%s"%fileName, 'w') as config_file:
-            subprocess.Popen(["curl", uri], stdout=config_file)
+            subprocess.Popen(["curl","-k", uri], stdout=config_file)
     return fileName
 
 def execute(fileName):
@@ -137,9 +133,10 @@ modem.AT(at.cmgf(mode=1) ) # text mode
 
 unreadSMSList = modem.AT( at.cmgl(stat="REC UNREAD") )
 
+# print "checked messages"
 for message in unreadSMSList.messageList:
-    print 'L133:printing message:'
-    print message['message']
+    # print 'L133:hrinting message:'
+    # print message['message']
     # 0.5) sanitize
     messageData = messageSanitizer(message['message'])
     # 1) authenticate sender
@@ -147,22 +144,23 @@ for message in unreadSMSList.messageList:
     assert authenticated == True, "Warning, unauthenticated text!"
     # 2) parse message
     instruction = parseCommandSMS(messageData['message'])
+    print instruction
     
-    # 3) act on instruction
-    if instruction['command'] == 'STR':
-        # curl the file and save in home dir
-        fetch(instruction['resource'])
-    elif instruction['command'] == 'EXEC1':
-        # curl the file and save in home dir
-        fileName = fetch(instruction['resource'])
-        # execute the file
-        execute(fileName)
-    elif instruction['command'] == 'EXEC':
-        # execute the file
-        execute(fileName)
-    else:
-        # what to do if the instruction is unknown?
-        pass
+    #    # 3) act on instruction
+    #    if instruction['command'] == 'STR':
+    #        # curl the file and save in home dir
+    #        fetch(instruction['resource'])
+    #    elif instruction['command'] == 'EXEC1':
+    #        # curl the file and save in home dir
+    #        fileName = fetch(instruction['resource'])
+    #        # execute the file
+    #        execute(fileName)
+    #    elif instruction['command'] == 'EXEC':
+    #        # execute the file
+    #        execute(fileName)
+    #    else:
+    #        # what to do if the instruction is unknown?
+    #        pass
 
 # clean up (turn off rx/tx)
 modem.AT(at.cfun(fun=4) )
