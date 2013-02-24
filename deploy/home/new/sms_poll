@@ -1,0 +1,25 @@
+#!/bin/sh
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PYTHONPATH
+
+ADDR=`python /usr/bin/parseSMS.py | grep https |tail -1 `
+echo $ADDR
+if [ -z ${ADDR} ] 
+  then
+  D=`date`
+  echo no poll ${D}
+  echo no poll ${D} >> /home/root/logfile.txt
+  else
+  D=`date`
+  echo successful poll ${D} 
+  echo successful poll ${D} >> /home/root/logfile.txt
+  pon icon322 >> /home/root/logfile.txt
+  ifconfig >> /home/root/logfile.txt
+  route >> /home/root/logfile.txt
+  cp /home/root/master.resolv.conf /etc/resolv.conf
+  ping -c2 google.com
+  ping -c2 transactionalweb.com
+  curl -k ${ADDR} > /home/root/smsconfigfile.txt
+  poff
+  cat /home/root/smsconfigfile.txt >> logfile.txt
+  cat /home/root/smsconfigfile.txt
+fi

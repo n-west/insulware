@@ -2,4 +2,5 @@
 # Author: Nathan West
 # Detect usb devices that are connected
 
-echo 'true'
+output=$(lsusb | awk "/$VID:$PID/ {echo 'true' }")
+echo $output
