@@ -50,22 +50,6 @@ def authenticateSMSMaster(blob):
     '''
     return True
 
-def parseConfigSMS(sms, config):
-    '''
-    I want to receive config options through an SMS
-    and return a dict
-    
-    Received format:
-    key=value;key=value;key=value
-    '''
-    configList = sms.split(';')
-    for setting in configList:
-        settingList = setting.split('=')
-        print "settingList: "
-        print settingList
-        config[settingList[0]] = settingList[1]
-    return config
-
 def parseCommandSMS(sms):
     '''
     Receive command and uri through an SMS and return a dict with cmd, uri
@@ -131,10 +115,11 @@ modem.AT(at.cmgf(mode=1) ) # text mode
 # 0) load existing results (mainly to avoid wiping out stuff
 # configs = readConfigFile(configFile)
 
-unreadSMSList = modem.AT( at.cmgl(stat="REC UNREAD") )
+unreadSMSList = modem.AT( at.cmgl(stat="REC UNREAD", debug=False) )
 
 # print "checked messages"
 for message in unreadSMSList.messageList:
+    # print message['message']
     # print 'L133:hrinting message:'
     # print message['message']
     # 0.5) sanitize
@@ -144,12 +129,10 @@ for message in unreadSMSList.messageList:
     assert authenticated == True, "Warning, unauthenticated text!"
     # 2) parse message
     instruction = parseCommandSMS(messageData['message'])
-    print instruction
     
-    #    # 3) act on instruction
-    #    if instruction['command'] == 'STR':
-    #        # curl the file and save in home dir
-    #        fetch(instruction['resource'])
+    # 3) act on instruction
+    if instruction['command'] == 'STR':
+         print instruction['resource']
     #    elif instruction['command'] == 'EXEC1':
     #        # curl the file and save in home dir
     #        fileName = fetch(instruction['resource'])
@@ -163,4 +146,4 @@ for message in unreadSMSList.messageList:
     #        pass
 
 # clean up (turn off rx/tx)
-modem.AT(at.cfun(fun=4) )
+# modem.AT(at.cfun(fun=4) )
