@@ -12,7 +12,7 @@ Any thing else that's small, self-contained, and should be shipped on the 'bone 
 
 # 3G/Modem/network #
 There's a script in `/usr/bin/` to parse SMS config texts. 
-It depends on pymodem.
+It depends on cgmpy.
 
 # Miscellany #
 We are interested in low power stuff. 
