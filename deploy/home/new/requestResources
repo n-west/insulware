@@ -11,10 +11,8 @@ PORT=${2}
 PAGE=${3}
 USER=${4}
 KEY=${5}
-VID=${6}
-PID=${7}
 
-CURLCMD="curl http://${DEST}:${PORT}/${PAGE}?user=${USER}&key=${KEY}&vid=${VID}&pid=${PID}"
+CURLCMD="curl http://${DEST}:${PORT}/${PAGE}?u=${USER}&k=${KEY}"
 # echo ${CURLCMD}
 RESP=`${CURLCMD}`
 

@@ -5,9 +5,9 @@ pid=2222
 [resourceRequest]
 addr=bewest.io
 port=80
-page=audit.php
-user_id=nathan
-key_loc=0123456789
+audit=medevice://new@bewest.io:9001/insulauditpage=audit.php
+userid=3
+key=1008856695
 
 [serialToNet]
 addr=bewest.io
@@ -15,3 +15,9 @@ port=9001
 
 [registration]
 addr=bewest.io
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=1008856695&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:bewest/diabetes-phr.git
+firstname=Nathan
+lastname=West

@@ -14,4 +14,14 @@
 # Fingerprint: md5 $(hex fingerprint)
 # "
 # This uses gawk to create the pub file along with the keyfile
-dropbear -t rsa -f /home/new/auditingKey | awk '/ssh/ {print $0}' > auditingKey.pub
+ADDR=$1
+
+dropbearkey -t rsa -f /home/new/auditingKey | awk '/ssh/ {print $0}' > auditingKey.pub
+
+# credit to Ben for pointing out git config hack
+# this requires an env var $AUDITCONFIG to be the config location
+# export AUDITCONFIG=/path/to/conf somewhere
+# ADDR=$(git config -f $CONF --get registration.postpubkeyhere)
+# echo $ADDR
+
+curl --data "k=$(cat auditingKey.pub)" $ADDR

@@ -14,7 +14,7 @@ deviceDetect = readConf.parseConfig(conf, section, ["vid", "pid"] )
 
 # requestResources dest, port, page, user, key, vid, pid
 section = 'resourceRequest'
-options = ['addr', 'port', 'page', 'user_id', 'key_loc' ]
+options = ['addr', 'port', 'page', 'user_id', 'key' ]
 
 resourceRequest = readConf.parseConfig(conf, section, options)
 # hrm, so this requires cd to be /home/new
