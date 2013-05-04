@@ -1,0 +1,9 @@
+[Unit]
+Description=On boot, update time
+
+[Service]
+Type=oneshot
+ExecStart=`ntpdate -b -s -u pool.ntp.org`
+
+[Install]
+WantedBy=multi-user.target

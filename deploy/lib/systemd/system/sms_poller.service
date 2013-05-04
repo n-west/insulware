@@ -1,0 +1,9 @@
+[Unit]
+Description=On boot, poll for any incoming SMS
+
+[Service]
+Type=oneshot
+ExecStart=/home/new/poll_sms
+
+[Install]
+WantedBy=multi-user.target
