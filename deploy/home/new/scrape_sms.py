@@ -1,4 +1,4 @@
-import base64
+#!/usr/bin/python2.7
 import cmgpy
 at = cmgpy.commands.at
 icon322 = cmgpy.Modem('/dev/ttyHS0', 115200)
@@ -12,7 +12,10 @@ for message in messages:
     formatted_message_string = message['date'] + ";" + 
                                message['da'] + ";\"" +
                                message['message'] + "\""
-    sms_file.write(base64.encodestring(message))
+    formatted_message_string = formatted_message_string.replace('\n','^n')
+    formatted_message_string = formatted_message_string.replace('\r','^r')
+    sms_file.write(formatted_message_string+'\n')
+
 
 # could be moved before loop
 icon322.AT(at.cmgd(index=0, flag=4)) # delete ALL SMS with flag=4
