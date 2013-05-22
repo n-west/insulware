@@ -1,1 +1,4 @@
-cut -d \, -f 2 
+#!/bin/bash
+
+cut -d, -f 2
+

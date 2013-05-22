@@ -5,7 +5,7 @@ echo "modemsetup"
 echo "streaming modem"
 #( rewind_messages ;
 #( ./stream_modem.sh | ./getsmsid.sh )) | while read sms_id ; do
-( ./stream_modem.sh | ./getsmsid.sh ) | while read sms_id ; do
+( ./stream_modem.sh | ./getsmsid.sh ) | cat | while read sms_id ; do
   sms=$(get_sms_at_index.sh $sms_id | grep STR)
   echo "$(date +%FT%T): ${sms_id}: $sms"
   config_url=$(echo "$sms" | cut -d' ' -f 2)
