@@ -2,7 +2,7 @@
 URL=${1}
 OUTPUT=${2}
 
-curl -k $URL > $OUTPUT
+curl -s -k $URL | tee $OUTPUT
 
 #####
 # EOF

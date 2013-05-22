@@ -1,0 +1,1 @@
+(echo "AT+CMGF=1"; echo "AT+CMGL=\"ALL\""; sleep 3 ; echo ; ) | socat - /dev/ttyHS1,raw,echo=0,nonblock,crlf
