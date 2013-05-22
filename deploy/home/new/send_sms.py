@@ -10,7 +10,7 @@ icon322.AT(at.cfun(fun=4))
 res =icon322.AT(at.cfun().query() )
 print res.text
 icon322.AT(at.cmgf(mode=1))
-res = icon322.AT(at.cmgs(da="19082165058", msg="Test from cmgpy"))
+res = icon322.AT(at.cmgs(da="+19082165054", msg="Test from cmgpy"))
 print res.text
 
 

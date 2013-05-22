@@ -8,7 +8,11 @@ icon322 = cmgpy.Modem('/dev/ttyHS0', 115200)
 
 sms_file = open('sms_history.txt', 'a') # append all SMS to file
 
+print icon322.AT(at.cmgf(mode=1)).raw
+icon322.send('AT+CMGL="ALL"\r\n')
+print icon322.receive( )
 result = icon322.AT(at.cmgl(stat="ALL"))
+
 messages = result.messageList
 print "found messages: %s" % (len(messages))
 for message in messages:
