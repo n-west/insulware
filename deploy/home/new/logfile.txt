@@ -5943,3 +5943,375 @@ add 'incoming.log'
 31646 ?        00:05:53 socat
 32188 ?        00:06:02 socat
 THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1360553446
+user: 5
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+AUDIT_SESSION=1360553446
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 52170 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-28-5-1360553446
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52170 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=1360553446&u=5
+SETUP GIT CLONE
+keys:
+
+/home/insulaudit/sessions/5-1360553446/remote.git
+/home/insulaudit/sessions/5-1360553446/local
+Already up-to-date.
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-1360553446/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-1360553446/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-28
+AUDIT_SESSION=1360553446
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 52170 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-28-5-1360553446
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52170 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/5-1360553446/sugars.txt /home/insulaudit/sessions/5-1360553446/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-28-5-1360553446 b71823d] commit 5-1360553446 2013-05-28T18:03:36
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+?? rm /home/insulaudit/sessions/5-1360553446
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+24198 ?        00:00:00 sshd
+24201 ?        00:00:00 sh
+24202 ?        00:00:00 do_audit_for.sh
+24280 ?        00:00:00 ps
+29718 ?        00:06:01 socat
+29869 ?        00:05:57 socat
+31511 ?        00:06:04 socat
+31646 ?        00:05:54 socat
+32188 ?        00:06:04 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1360553446
+user: 5
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+AUDIT_SESSION=1360553446
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 52172 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-28-5-1360553446
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52172 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=1360553446&u=5
+SETUP GIT CLONE
+keys:
+
+/home/insulaudit/sessions/5-1360553446/remote.git
+/home/insulaudit/sessions/5-1360553446/local
+Already up-to-date.
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-1360553446/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-1360553446/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-28
+AUDIT_SESSION=1360553446
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 52172 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-28-5-1360553446
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52172 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/5-1360553446/sugars.txt /home/insulaudit/sessions/5-1360553446/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-28-5-1360553446 d0a41e3] commit 5-1360553446 2013-05-28T18:04:42
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+?? rm /home/insulaudit/sessions/5-1360553446
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+24369 ?        00:00:00 sshd
+24370 ?        00:00:00 sh
+24371 ?        00:00:00 do_audit_for.sh
+24449 ?        00:00:00 ps
+29718 ?        00:06:01 socat
+29869 ?        00:05:57 socat
+31511 ?        00:06:04 socat
+31646 ?        00:05:54 socat
+32188 ?        00:06:04 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1400568602 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1400568602
+user: 3
+VMODEM=/home/insulaudit/sessions/3-1400568602/vmodem
+AUDIT_SESSION=1400568602
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 52176 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-1400568602/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-1400568602/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-1400568602/local
+BRANCH=audit/2013-05-28-3-1400568602
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-1400568602/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1400568602 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52176 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-1400568602
+SESS_KEY=3-1400568602
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=1400568602&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:bewest/diabetes-phr.git
+/home/insulaudit/sessions/3-1400568602/remote.git
+/home/insulaudit/sessions/3-1400568602/local
+Cloning into '/home/insulaudit/sessions/3-1400568602/local'...
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-1400568602/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-1400568602/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-28
+AUDIT_SESSION=1400568602
+VMODEM=/home/insulaudit/sessions/3-1400568602/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 52176 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-1400568602/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-1400568602/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-1400568602/local
+BRANCH=audit/2013-05-28-3-1400568602
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-1400568602/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1400568602 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 52176 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-1400568602
+SESS_KEY=3-1400568602
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-1400568602/sugars.txt /home/insulaudit/sessions/3-1400568602/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+q4=select * from rawdatapolled where ix='35' order by ix desc limit 1;File of size=141 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+?? rm /home/insulaudit/sessions/3-1400568602
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+24531 ?        00:00:00 sshd
+24532 ?        00:00:00 sh
+24533 ?        00:00:00 do_audit_for.sh
+24589 ?        00:00:00 ps
+29718 ?        00:06:01 socat
+29869 ?        00:05:57 socat
+31511 ?        00:06:04 socat
+31646 ?        00:05:54 socat
+32188 ?        00:06:04 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
