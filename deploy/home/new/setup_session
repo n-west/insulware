@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 CONFIG_FILE=${1-'good.config'}
 LOG_FILE="/home/new/logfile.txt"
@@ -7,8 +7,8 @@ PATH=$PATH:.
 echo "radio mode"
 # pon
 pon icon322
-su -c ifconfig >> $LOG_FILE
-su -c route -n >> $LOG_FILE
+/sbin/ifconfig >> $LOG_FILE
+/sbin/route -n >> $LOG_FILE
 ping -c2 google.com
 session_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.key)
 user_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.userid)

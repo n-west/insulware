@@ -6762,3 +6762,884 @@ pollinginterval=300
 phr=git@github.com:bewest/diabetes-phr.git
 firstname=Nathan
 lastname=West
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 944606463 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 944606463
+user: 3
+VMODEM=/home/insulaudit/sessions/3-944606463/vmodem
+AUDIT_SESSION=944606463
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60406 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-944606463/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-944606463/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-944606463/local
+BRANCH=audit/2013-05-29-3-944606463
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-944606463/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 944606463 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60406 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-944606463
+SESS_KEY=3-944606463
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=944606463&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:bewest/diabetes-phr.git
+/home/insulaudit/sessions/3-944606463/remote.git
+/home/insulaudit/sessions/3-944606463/local
+Cloning into '/home/insulaudit/sessions/3-944606463/local'...
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-944606463/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-944606463/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=944606463
+VMODEM=/home/insulaudit/sessions/3-944606463/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60406 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-944606463/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-944606463/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-944606463/local
+BRANCH=audit/2013-05-29-3-944606463
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-944606463/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 944606463 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60406 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-944606463
+SESS_KEY=3-944606463
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-944606463/sugars.txt /home/insulaudit/sessions/3-944606463/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+q4=select * from rawdatapolled where ix='39' order by ix desc limit 1;File of size=141 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+?? rm /home/insulaudit/sessions/3-944606463
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+27822 ?        00:00:00 sshd
+27823 ?        00:00:00 sh
+27824 ?        00:00:00 do_audit_for.sh
+27936 ?        00:00:00 ps
+29718 ?        00:06:01 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:55 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=944606463
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=944606463&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=944606463&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=944606463&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:bewest/diabetes-phr.git
+firstname=Nathan
+lastname=West
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 212658010 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 212658010
+user: 3
+VMODEM=/home/insulaudit/sessions/3-212658010/vmodem
+AUDIT_SESSION=212658010
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60409 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-212658010/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-212658010/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-212658010/local
+BRANCH=audit/2013-05-29-3-212658010
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-212658010/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 212658010 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60409 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-212658010
+SESS_KEY=3-212658010
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=212658010&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:bewest/diabetes-phr.git
+/home/insulaudit/sessions/3-212658010/remote.git
+/home/insulaudit/sessions/3-212658010/local
+Cloning into '/home/insulaudit/sessions/3-212658010/local'...
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-212658010/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-212658010/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=212658010
+VMODEM=/home/insulaudit/sessions/3-212658010/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60409 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-212658010/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-212658010/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-212658010/local
+BRANCH=audit/2013-05-29-3-212658010
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-212658010/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 212658010 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60409 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-212658010
+SESS_KEY=3-212658010
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-212658010/sugars.txt /home/insulaudit/sessions/3-212658010/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+q4=select * from rawdatapolled where ix='40' order by ix desc limit 1;File of size=141 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+?? rm /home/insulaudit/sessions/3-212658010
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+29146 ?        00:00:00 sshd
+29147 ?        00:00:00 sh
+29148 ?        00:00:00 do_audit_for.sh
+29246 ?        00:00:00 ps
+29718 ?        00:06:01 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:55 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=212658010
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=212658010&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=212658010&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=212658010&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:bewest/diabetes-phr.git
+firstname=Nathan
+lastname=West
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1360553446
+user: 5
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+AUDIT_SESSION=1360553446
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60422 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-29-5-1360553446
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60422 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=1360553446&u=5
+SETUP GIT CLONE
+keys:
+
+/home/insulaudit/sessions/5-1360553446/remote.git
+/home/insulaudit/sessions/5-1360553446/local
+# On branch audit/2013-05-29-5-1360553446
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/5-1360553446/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/5-1360553446/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=1360553446
+VMODEM=/home/insulaudit/sessions/5-1360553446/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60422 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/5-1360553446/conf
+WORK_REMOTE=/home/insulaudit/sessions/5-1360553446/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/5-1360553446/local
+BRANCH=audit/2013-05-29-5-1360553446
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/5-1360553446/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1360553446 5
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60422 10.170.185.103 22
+AUDIT_UID=5
+WORK_BASE=/home/insulaudit/sessions/5-1360553446
+SESS_KEY=5-1360553446
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/5-1360553446/sugars.txt /home/insulaudit/sessions/5-1360553446/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+/home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-29-5-1360553446 4d3c5d1] commit 5-1360553446 2013-05-29T03:34:37
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+?? rm /home/insulaudit/sessions/5-1360553446
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+19069 ?        00:00:00 sshd
+19070 ?        00:00:00 sh
+19071 ?        00:00:00 do_audit_for.sh
+19221 ?        00:00:00 ps
+29718 ?        00:06:02 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:56 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 848041810 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 848041810
+user: 3
+VMODEM=/home/insulaudit/sessions/3-848041810/vmodem
+AUDIT_SESSION=848041810
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60425 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-848041810/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-848041810/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-848041810/local
+BRANCH=audit/2013-05-29-3-848041810
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-848041810/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 848041810 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60425 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-848041810
+SESS_KEY=3-848041810
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=848041810&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:bewest/diabetes-phr.git
+/home/insulaudit/sessions/3-848041810/remote.git
+/home/insulaudit/sessions/3-848041810/local
+Cloning into '/home/insulaudit/sessions/3-848041810/local'...
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-848041810/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-848041810/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=848041810
+VMODEM=/home/insulaudit/sessions/3-848041810/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60425 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-848041810/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-848041810/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-848041810/local
+BRANCH=audit/2013-05-29-3-848041810
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-848041810/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 848041810 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60425 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-848041810
+SESS_KEY=3-848041810
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-848041810/sugars.txt /home/insulaudit/sessions/3-848041810/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 6
+
+all records
+record: 0
+2013-05-22T17:43:18	164
+record: 1
+2013-05-22T03:39:03	96
+record: 2
+2013-05-20T16:45:20	170
+record: 3
+2013-05-18T18:02:27	176
+record: 4
+2013-05-18T15:48:21	95
+record: 5
+2013-05-18T15:12:40	90
+total records found:6
+q4=select * from rawdatapolled where ix='41' order by ix desc limit 1;File of size=141 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+?? rm /home/insulaudit/sessions/3-848041810
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+19758 ?        00:00:00 sshd
+19759 ?        00:00:00 sh
+19760 ?        00:00:00 do_audit_for.sh
+19865 ?        00:00:00 ps
+29718 ?        00:06:02 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:56 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=848041810
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=848041810&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=848041810&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=848041810&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:bewest/diabetes-phr.git
+firstname=Nathan
+lastname=West
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1901506861 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 1901506861
+user: 3
+VMODEM=/home/insulaudit/sessions/3-1901506861/vmodem
+AUDIT_SESSION=1901506861
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60428 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-1901506861/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-1901506861/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-1901506861/local
+BRANCH=audit/2013-05-29-3-1901506861
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-1901506861/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 1901506861 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60428 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-1901506861
+SESS_KEY=3-1901506861
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=1901506861&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/3-1901506861/remote.git
+/home/insulaudit/sessions/3-1901506861/local
+Cloning into '/home/insulaudit/sessions/3-1901506861/local'...
+# On branch audit/2013-05-29-3-1901506861
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-1901506861/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-1901506861/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=1901506861
+VMODEM=/home/insulaudit/sessions/3-1901506861/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60428 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-1901506861/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-1901506861/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-1901506861/local
+BRANCH=audit/2013-05-29-3-1901506861
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-1901506861/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 1901506861 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60428 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-1901506861
+SESS_KEY=3-1901506861
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-1901506861/sugars.txt /home/insulaudit/sessions/3-1901506861/vmodem
+No handlers could be found for logger "insulaudit.io"
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: 
+
+read serial number
+Traceback (most recent call last):
+  File "/home/insulaudit/bin/mini.py", line 73, in <module>
+    port = init(args)
+  File "/home/insulaudit/bin/mini.py", line 39, in init
+    serial = mini.execute( lsultramini.ReadSerialNumber( ) )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 190, in execute
+    r = self.__send__require_ack__( command )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 173, in __send__require_ack__
+    return self.__retry_write_with_ack__( msg, RETRIES )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 134, in __retry_write_with_ack__
+    self.__ack__ = self.__requireAck__( )
+  File "/home/bewest/src/insulaudit/src/insulaudit/devices/lsultramini.py", line 157, in __requireAck__
+    raise MissingAck(i)
+insulaudit.devices.lsultramini.MissingAck: 2
+q4=select * from rawdatapolled where ix='42' order by ix desc limit 1;File of size=0 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-29-3-1901506861 d2df639] commit 3-1901506861 2013-05-29T03:43:01
+ 1 file changed, 52 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/3-1901506861
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+21004 ?        00:00:00 sshd
+21005 ?        00:00:00 sh
+21006 ?        00:00:00 do_audit_for.sh
+21270 ?        00:00:00 ps
+29718 ?        00:06:02 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:56 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=1901506861
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=1901506861&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=1901506861&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=1901506861&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Nathan
+lastname=West
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 201288398 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 201288398
+user: 3
+VMODEM=/home/insulaudit/sessions/3-201288398/vmodem
+AUDIT_SESSION=201288398
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60431 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-201288398/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-201288398/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-201288398/local
+BRANCH=audit/2013-05-29-3-201288398
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-201288398/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 201288398 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60431 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-201288398
+SESS_KEY=3-201288398
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=201288398&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/3-201288398/remote.git
+/home/insulaudit/sessions/3-201288398/local
+Cloning into '/home/insulaudit/sessions/3-201288398/local'...
+# On branch audit/2013-05-29-3-201288398
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-201288398/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-201288398/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=201288398
+VMODEM=/home/insulaudit/sessions/3-201288398/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60431 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-201288398/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-201288398/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-201288398/local
+BRANCH=audit/2013-05-29-3-201288398
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-201288398/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 201288398 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60431 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-201288398
+SESS_KEY=3-201288398
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-201288398/sugars.txt /home/insulaudit/sessions/3-201288398/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: ÍAP02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 7
+
+all records
+record: 0
+2013-05-28T23:44:50	175
+record: 1
+2013-05-22T17:43:18	164
+record: 2
+2013-05-22T03:39:03	96
+record: 3
+2013-05-20T16:45:20	170
+record: 4
+2013-05-18T18:02:27	176
+record: 5
+2013-05-18T15:48:21	95
+record: 6
+2013-05-18T15:12:40	90
+total records found:7
+q4=select * from rawdatapolled where ix='43' order by ix desc limit 1;File of size=165 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-29-3-201288398 9e4bc47] commit 3-201288398 2013-05-29T03:43:58
+ 1 file changed, 58 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/3-201288398
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:22 socat
+21516 ?        00:00:00 sshd
+21517 ?        00:00:00 sh
+21518 ?        00:00:00 do_audit_for.sh
+21692 ?        00:00:00 ps
+29718 ?        00:06:02 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:56 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=201288398
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=201288398&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=201288398&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=201288398&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Nathan
+lastname=West

@@ -4,7 +4,9 @@ Description=insulware: On boot, poll for any incoming SMS
 [Service]
 # Type=oneshot
 ExecStart=/home/new/boot_insulaudit
+WorkingDirectory=/home/new
 Restart=on-abort
+User=new
 
 
 [Install]

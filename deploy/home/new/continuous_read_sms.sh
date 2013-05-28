@@ -8,7 +8,7 @@ set -x
 #( ./stream_modem.sh | ./getsmsid.sh )) | while read sms_id ; do
 # ./stream_modem.sh | while read sms_id ; do
 ./stream_modem.sh | while read notification ; do
-  echo $notification
+  echo INCOMING $notification
   sms_id=$(echo $notification | grep CMTI | ./getsmsid.sh)
   test -z $sms_id && continue
   sms=$(get_sms_at_index.sh $sms_id | grep STR)

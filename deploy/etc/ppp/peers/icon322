@@ -2,7 +2,7 @@
 # print a bunch of useful stuff
 debug
 # the serial port to use
-/dev/ttyHS0
+/dev/ttyHS1
 #Baudrate
 115200
 
