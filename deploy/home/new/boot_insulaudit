@@ -1,0 +1,4 @@
+#!/bin/bash
+./modemsetup.sh
+./dump_messages
+exec ./continuous_read_sms.sh

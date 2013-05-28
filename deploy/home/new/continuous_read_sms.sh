@@ -24,6 +24,6 @@ set -x
     setup_session good.config
     # delete $sms_id
     echo "$(date +%FT%T): deleting ${sms_id}"
-    # delete_sms_at $sms_id
+    delete_sms_at $sms_id
   fi
 done
