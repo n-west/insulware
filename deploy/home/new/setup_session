@@ -7,9 +7,8 @@ PATH=$PATH:.
 echo "radio mode"
 # pon
 pon icon322
-ifconfig >> $LOG_FILE
-route >> $LOG_FILE
-cp /home/root/master.resolv.conf /etc/resolv.conf
+su -c ifconfig >> $LOG_FILE
+su -c route -n >> $LOG_FILE
 ping -c2 google.com
 session_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.key)
 user_id=$(git config -f ${CONFIG_FILE} --get resourceRequest.userid)
