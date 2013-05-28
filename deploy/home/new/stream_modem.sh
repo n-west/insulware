@@ -1,1 +1,1 @@
-socat -u /dev/ttyHS0,nonblock,crlf,echo=1,ignoreeof -
+socat -u /dev/ttyHS0,raw,nonblock,crlf,echo=1,ignoreeof exec:'cat -'

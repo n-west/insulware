@@ -3,9 +3,11 @@ export PATH=.:$PATH
 echo "modemsetup"
 ./modemsetup.sh
 echo "streaming modem"
+set -x
 #( rewind_messages ;
 #( ./stream_modem.sh | ./getsmsid.sh )) | while read sms_id ; do
 ( ./stream_modem.sh | ./getsmsid.sh ) | cat | while read sms_id ; do
+  test -z $sms_id && continue
   sms=$(get_sms_at_index.sh $sms_id | grep STR)
   echo "$(date +%FT%T): ${sms_id}: $sms"
   config_url=$(echo "$sms" | cut -d' ' -f 2)
