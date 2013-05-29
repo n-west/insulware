@@ -1,5 +1,6 @@
 #!/bin/bash
 export PATH=.:$PATH
+LOG_FILE="/home/new/logfile.txt"
 echo "modemsetup"
 ./modemsetup.sh
 echo "streaming modem"
@@ -15,7 +16,16 @@ set -x
   echo "$(date +%FT%T): ${sms_id}: $sms"
   config_url=$(echo "$sms" | cut -d' ' -f 2)
   echo $(date +%FT%T): config_url "$config_url"
+  echo "RADIO MODE"
+  # pon
+  pon icon322
+  sleep 15
+  /sbin/ifconfig | tee - a $LOG_FILE
+  /sbin/route -n | tee - a $LOG_FILE
+  ping -c2 google.com
+  ping -c2 173.194.43.9
   rm -f new.config 
+  cat /etc/resolv.conf
   test -n ${config_url} && validate_config "${config_url}" new.config
   if [[ -f new.config ]] ; then
     mv new.config good.config
@@ -26,4 +36,5 @@ set -x
     echo "$(date +%FT%T): deleting ${sms_id}"
     delete_sms_at $sms_id
   fi
+  poff
 done

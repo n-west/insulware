@@ -7643,3 +7643,647 @@ pollinginterval=300
 phr=git@github.com:ehwest/medicalrecords.git
 firstname=Nathan
 lastname=West
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:192.168.1.100  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:58111 errors:0 dropped:6 overruns:0 frame:0
+          TX packets:15396 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:9977503 (9.5 MiB)  TX bytes:5826985 (5.5 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:2665 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2665 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:148034 (144.5 KiB)  TX bytes:148034 (144.5 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.203.153.250  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:77 (77.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+167.206.245.129 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+167.206.245.130 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.1.1     0.0.0.0         255.255.255.255 UH    0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 2129519671 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 2129519671
+user: 3
+VMODEM=/home/insulaudit/sessions/3-2129519671/vmodem
+AUDIT_SESSION=2129519671
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60435 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-2129519671/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-2129519671/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-2129519671/local
+BRANCH=audit/2013-05-29-3-2129519671
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-2129519671/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 2129519671 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60435 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-2129519671
+SESS_KEY=3-2129519671
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=2129519671&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/3-2129519671/remote.git
+/home/insulaudit/sessions/3-2129519671/local
+Cloning into '/home/insulaudit/sessions/3-2129519671/local'...
+# On branch audit/2013-05-29-3-2129519671
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-2129519671/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-2129519671/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-29
+AUDIT_SESSION=2129519671
+VMODEM=/home/insulaudit/sessions/3-2129519671/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60435 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-2129519671/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-2129519671/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-2129519671/local
+BRANCH=audit/2013-05-29-3-2129519671
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-2129519671/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 2129519671 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60435 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-2129519671
+SESS_KEY=3-2129519671
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-2129519671/sugars.txt /home/insulaudit/sessions/3-2129519671/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 7
+
+all records
+record: 0
+2013-05-28T23:44:50	175
+record: 1
+2013-05-22T17:43:18	164
+record: 2
+2013-05-22T03:39:03	96
+record: 3
+2013-05-20T16:45:20	170
+record: 4
+2013-05-18T18:02:27	176
+record: 5
+2013-05-18T15:48:21	95
+record: 6
+2013-05-18T15:12:40	90
+total records found:7
+q4=select * from rawdatapolled where ix='44' order by ix desc limit 1;File of size=165 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-29-3-2129519671 fe0c3cc] commit 3-2129519671 2013-05-29T04:09:24
+ 1 file changed, 58 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/3-2129519671
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:23 socat
+27143 ?        00:00:00 sshd
+27144 ?        00:00:00 sh
+27145 ?        00:00:00 do_audit_for.sh
+27289 ?        00:00:00 ps
+29718 ?        00:06:02 socat
+29869 ?        00:05:58 socat
+31511 ?        00:06:05 socat
+31646 ?        00:05:56 socat
+32188 ?        00:06:05 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=2129519671
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=2129519671&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=2129519671&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=2129519671&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Nathan
+lastname=West
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:58454 errors:0 dropped:6 overruns:0 frame:0
+          TX packets:15657 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:10029205 (9.5 MiB)  TX bytes:5884239 (5.6 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3183 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3183 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:175994 (171.8 KiB)  TX bytes:175994 (171.8 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.225.208.151  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:192.168.1.100  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:189336 errors:0 dropped:37 overruns:0 frame:0
+          TX packets:19296 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:38337090 (36.5 MiB)  TX bytes:6922534 (6.6 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3240 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3240 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:180251 (176.0 KiB)  TX bytes:180251 (176.0 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.229.79.18  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+167.206.245.129 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+167.206.245.130 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.1.1     0.0.0.0         255.255.255.255 UH    0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 555286020 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 555286020
+user: 3
+VMODEM=/home/insulaudit/sessions/3-555286020/vmodem
+AUDIT_SESSION=555286020
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60441 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-555286020/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-555286020/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-555286020/local
+BRANCH=audit/2013-05-30-3-555286020
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-555286020/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 555286020 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60441 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-555286020
+SESS_KEY=3-555286020
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=555286020&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/3-555286020/remote.git
+/home/insulaudit/sessions/3-555286020/local
+Cloning into '/home/insulaudit/sessions/3-555286020/local'...
+# On branch audit/2013-05-30-3-555286020
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-555286020/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-555286020/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-30
+AUDIT_SESSION=555286020
+VMODEM=/home/insulaudit/sessions/3-555286020/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60441 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-555286020/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-555286020/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-555286020/local
+BRANCH=audit/2013-05-30-3-555286020
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-555286020/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 555286020 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60441 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-555286020
+SESS_KEY=3-555286020
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-555286020/sugars.txt /home/insulaudit/sessions/3-555286020/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 7
+
+all records
+record: 0
+2013-05-28T23:44:50	175
+record: 1
+2013-05-22T17:43:18	164
+record: 2
+2013-05-22T03:39:03	96
+record: 3
+2013-05-20T16:45:20	170
+record: 4
+2013-05-18T18:02:27	176
+record: 5
+2013-05-18T15:48:21	95
+record: 6
+2013-05-18T15:12:40	90
+total records found:7
+q4=select * from rawdatapolled where ix='47' order by ix desc limit 1;File of size=165 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-30-3-555286020 e59b438] commit 3-555286020 2013-05-30T01:21:20
+ 1 file changed, 58 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/3-555286020
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:25 socat
+23036 ?        00:00:00 socat
+23199 ?        00:00:00 socat
+23352 ?        00:00:00 socat
+25586 ?        00:00:00 sshd
+25587 ?        00:00:00 sh
+25588 ?        00:00:00 do_audit_for.sh
+25662 ?        00:00:00 ps
+29718 ?        00:06:05 socat
+29869 ?        00:06:00 socat
+31511 ?        00:06:07 socat
+31646 ?        00:05:59 socat
+32188 ?        00:06:08 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=555286020
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=555286020&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=555286020&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=555286020&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Nathan
+lastname=West
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          inet addr:192.168.1.100  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::218:31ff:fee1:3afd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:189713 errors:0 dropped:38 overruns:0 frame:0
+          TX packets:19580 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:38395187 (36.6 MiB)  TX bytes:6983010 (6.6 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:3737 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3737 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:206856 (202.0 KiB)  TX bytes:206856 (202.0 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.233.27.26  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:5 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:50 (50.0 B)  TX bytes:77 (77.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG    0      0        0 eth0
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+167.206.245.129 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+167.206.245.130 192.168.1.1     255.255.255.255 UGH   0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+192.168.1.1     0.0.0.0         255.255.255.255 UH    0      0        0 eth0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 280376454 3
+$0: /home/insulaudit/bin/do_audit_for.sh
+tool: audit
+session: 280376454
+user: 3
+VMODEM=/home/insulaudit/sessions/3-280376454/vmodem
+AUDIT_SESSION=280376454
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+FOO=BAR
+SSH_CLIENT=24.188.106.65 60444 22
+PHR_REPO=
+WORK_REMOTE=/home/insulaudit/sessions/3-280376454/remote.git
+WORK_CONF=/home/insulaudit/sessions/3-280376454/conf
+WORK_LOCAL=/home/insulaudit/sessions/3-280376454/local
+BRANCH=audit/2013-05-30-3-280376454
+AUDIT_USER=ehwest
+USER=insulaudit
+SESSION_CONFIG=/home/insulaudit/sessions/3-280376454/conf/audit.config
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+MAIL=/var/mail/insulaudit
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+SHLVL=1
+HOME=/home/insulaudit
+SSH_ORIGINAL_COMMAND=audit 280376454 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60444 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-280376454
+SESS_KEY=3-280376454
+AUDIT_TOOL=audit
+_=/usr/bin/env
+/home/insulaudit/bin/setup_audit_work
+CONFIG_URL https://transactionalweb.com/cloud/configfile.html?s=280376454&u=3
+SETUP GIT CLONE
+keys:
+git@github.com:ehwest/medicalrecords.git
+/home/insulaudit/sessions/3-280376454/remote.git
+/home/insulaudit/sessions/3-280376454/local
+Cloning into '/home/insulaudit/sessions/3-280376454/local'...
+# On branch audit/2013-05-30-3-280376454
+nothing to commit (working directory clean)
+CREATE VMODEM /home/insulaudit/bin/create_vmodem
+/home/insulaudit/bin/create_vmodem
+socat -d -d pty,link=/home/insulaudit/sessions/3-280376454/vmodem,waitslave,raw,b9600 TCP:localhost:9001
+/home/insulaudit/bin/perform_audit
+SHOULD I USE VMODEM: /home/insulaudit/sessions/3-280376454/vmodem?yes
+USING mini.py
+INCOMING: 2013-05-30
+AUDIT_SESSION=280376454
+VMODEM=/home/insulaudit/sessions/3-280376454/vmodem
+SHELL=/bin/sh
+BASE=/home/insulaudit/session
+SSH_CLIENT=24.188.106.65 60444 22
+FOO=BAR
+PHR_REPO=
+WORK_CONF=/home/insulaudit/sessions/3-280376454/conf
+WORK_REMOTE=/home/insulaudit/sessions/3-280376454/remote.git
+WORK_LOCAL=/home/insulaudit/sessions/3-280376454/local
+BRANCH=audit/2013-05-30-3-280376454
+USER=insulaudit
+AUDIT_USER=ehwest
+SESSION_CONFIG=/home/insulaudit/sessions/3-280376454/conf/audit.config
+MAIL=/var/mail/insulaudit
+PATH=/home/insulaudit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+PWD=/home/insulaudit
+LANG=en_US.UTF-8
+HOME=/home/insulaudit
+SHLVL=2
+SSH_ORIGINAL_COMMAND=audit 280376454 3
+LOGNAME=insulaudit
+SSH_CONNECTION=24.188.106.65 60444 10.170.185.103 22
+AUDIT_UID=3
+WORK_BASE=/home/insulaudit/sessions/3-280376454
+SESS_KEY=3-280376454
+AUDIT_TOOL=audit
+_=/usr/bin/env
+mini.py --output /home/insulaudit/sessions/3-280376454/sugars.txt /home/insulaudit/sessions/3-280376454/vmodem
+is open? True
+ timeout: 0.5
+Initial DISCONNECT
+GETTING FIRMWARE INFO
+FIRMWARE IS: P02.00.0025/05/07
+
+read serial number
+serial number: DLG8224ER
+
+number of available records:
+max records: 7
+
+all records
+record: 0
+2013-05-28T23:44:50	175
+record: 1
+2013-05-22T17:43:18	164
+record: 2
+2013-05-22T03:39:03	96
+record: 3
+2013-05-20T16:45:20	170
+record: 4
+2013-05-18T18:02:27	176
+record: 5
+2013-05-18T15:48:21	95
+record: 6
+2013-05-18T15:12:40	90
+total records found:7
+q4=select * from rawdatapolled where ix='48' order by ix desc limit 1;File of size=165 was uploaded and parsed successfully./home/insulaudit/bin/clean_audit_work
+add 'incoming.log'
+[audit/2013-05-30-3-280376454 ae660dd] commit 3-280376454 2013-05-30T01:22:30
+ 1 file changed, 58 insertions(+)
+ create mode 100644 incoming.log
+?? rm /home/insulaudit/sessions/3-280376454
+  PID TTY          TIME CMD
+  504 ?        00:00:00 ssh-agent
+ 4738 ?        00:00:00 ssh-agent
+ 4945 ?        00:00:00 ssh-agent
+10737 ?        00:00:25 socat
+23036 ?        00:00:00 socat
+23199 ?        00:00:00 socat
+23352 ?        00:00:00 socat
+25744 ?        00:00:00 sshd
+25745 ?        00:00:00 sh
+25746 ?        00:00:00 do_audit_for.sh
+25820 ?        00:00:00 ps
+29718 ?        00:06:05 socat
+29869 ?        00:06:00 socat
+31511 ?        00:06:07 socat
+31646 ?        00:05:59 socat
+32188 ?        00:06:08 socat
+THIS IS MY SPECIAL LOGIN SHELL. HANGING UP.
+[deviceDetect]
+vid=1111
+pid=2222
+auditor=mini.py
+
+[resourceRequest]
+addr=bewest.io
+port=80
+page=audit.php
+userid=3
+key=280376454
+
+[serialToNet]
+audit=medevice://new@bewest.io:9001/insulaudit
+addr=bewest.io
+port=9001
+
+[registration]
+addr=bewest.io
+dataurl=https://transactionalweb.com/cloud/auditdata.htm?key=280376454&u=3
+weburl=https://transactionalweb.com/cloud/auditdata.htm?key=280376454&u=3
+postpubkeyhere=https://transactionalweb.com/cloud/postpubkey.html?s=280376454&u=3
+pubkey=ssh-rsa thisissomekeygarbageblargblahfoobarbaz user@host
+pollinginterval=300
+phr=git@github.com:ehwest/medicalrecords.git
+firstname=Nathan
+lastname=West
+eth0      Link encap:Ethernet  HWaddr 00:18:31:E1:3A:FD  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:190587 errors:0 dropped:38 overruns:0 frame:0
+          TX packets:19844 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:38584120 (36.7 MiB)  TX bytes:7035588 (6.7 MiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:4247 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4247 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:234317 (228.8 KiB)  TX bytes:234317 (228.8 KiB)
+
+ppp0      Link encap:Point-to-Point Protocol  
+          inet addr:10.228.71.179  P-t-P:10.0.0.1  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:4 errors:1 dropped:0 overruns:0 frame:0
+          TX packets:5 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:3 
+          RX bytes:40 (40.0 B)  TX bytes:61 (61.0 B)
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      0        0 ppp0
+10.0.0.1        0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
+
+/usr/bin/socat -d -d  tcp-l:9001,reuseaddr FILE:/dev/ttyUSB0,nonblock,b9600,raw
+now run ssh -i auditingKey -A -R localhost:9001:localhost:9001 insulaudit@bewest.io audit 1360553446 5
