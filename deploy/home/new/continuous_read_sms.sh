@@ -20,8 +20,8 @@ set -x
   # pon
   pon icon322
   sleep 15
-  /sbin/ifconfig | tee - a $LOG_FILE
-  /sbin/route -n | tee - a $LOG_FILE
+  /sbin/ifconfig | tee -a $LOG_FILE
+  /sbin/route -n | tee -a $LOG_FILE
   ping -c2 google.com
   ping -c2 173.194.43.9
   rm -f new.config 
