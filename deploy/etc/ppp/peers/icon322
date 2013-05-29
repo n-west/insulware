@@ -34,7 +34,7 @@ updetach
 
 # This will cause DNS servers to obe printed.
 # does not enable them for me.
-# usepeerdns
+usepeerdns
 # authenticate with ATT
 user ISP@CINGULAR1.COM
 password CINGULAR1
