@@ -1,0 +1,8 @@
+#!/bin/bash
+URL=${1}
+OUTPUT=${2}
+
+curl -s -k $URL | tee $OUTPUT
+
+#####
+# EOF

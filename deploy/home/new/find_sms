@@ -1,0 +1,6 @@
+#!/bin/bash
+
+grep STR sms_history.txt | tail  -n 1
+
+#####
+# EOF

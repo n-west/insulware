@@ -1,0 +1,7 @@
+#!/bin/bash
+( 
+echo "AT+CMGF=1"; echo "AT+CMGL=\"ALL\""
+echo "AT+CMGD=1,4";
+sleep 3;
+echo ;
+) | socat - /dev/ttyHS0,raw,echo=0,crlf,nonblock | tee -a ./sms.log

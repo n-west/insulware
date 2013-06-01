@@ -1,9 +1,13 @@
 [Unit]
-Description=On boot, poll for any incoming SMS
+Description=insulware: On boot, poll for any incoming SMS
 
 [Service]
-Type=oneshot
-ExecStart=/home/new/scrape_sms.py
+# Type=oneshot
+ExecStart=/home/new/boot_insulaudit
+WorkingDirectory=/home/new
+Restart=on-abort
+User=new
+
 
 [Install]
 WantedBy=multi-user.target

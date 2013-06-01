@@ -1,0 +1,10 @@
+#!/bin/sh
+IFACE=$1
+LOCAL_IP=$4
+REMOTE_IP=$5
+
+echo "HELLO DOWN $IFACE"
+/sbin/route -n
+# echo "nameserver 127.0.0.1" | tee -a  /etc/resolv.conf
+
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+IFACE=$1
+LOCAL_IP=$4
+REMOTE_IP=$5
+
+echo "HELLO BRINGING UP $IFACE"
+/sbin/route -n
+echo "UPDATING TIME"
+/usr/bin/ntpdate -b -s -u pool.ntp.org  &
+# echo "nameserver 8.8.8.8"  | tee -a  /etc/resolv.conf
+# cp /home/root/master.resolv.conf /etc/resolv.conf
