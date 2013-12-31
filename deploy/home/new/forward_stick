@@ -18,26 +18,31 @@
 #  socat  FILE:/dev/ttyUSB0,nonblock,b9600,raw tcp:localhost:4161 
 
 # 
+# This should eventally get set somewhere else (a config?)
+LC_AUDIT_PORT=`git config -f smsconfigfile.txt --get auditor.port`
+AUDIT_HOST=`git config -f smsconfigfile.txt --get auditor.host`
+AUDIT_USER=`git config -f smsconfigfile.txt --get auditor.user`
 echo ""
 SOCAT=$(which socat)
 # BLOCK_SIZE="-b 64"
 BLOCK_SIZE=""
-ADDR1="tcp-l:9001,reuseaddr"
+ADDR1="tcp-l:$LC_AUDIT_PORT,reuseaddr"
 ADDR2="FILE:/dev/ttyUSB0,nonblock,b9600,raw"
 # ADDR2="FILE:carelink.ttyUSB0,b9600,raw"
 # $ socat pty,link=$HOME/dev/vmodem0,waitslave tcp:modem-server:54321
 SOCAT_ARGS="-d -d ${BLOCK_SIZE} ${ADDR1} ${ADDR2}"
 
 TOOL="audit"
-SESSION=${1-'1360553446'}
+SESSION=${1-'1360553446'} # ben: what is this witchcraft?
 USER=${2-'5'}
 echo "$SOCAT $SOCAT_ARGS"
+#auditingKey is the location, it might come from a config, eh?
 dropbear_args="-i auditingKey -A"
-ssh_hint="$dropbear_args -R localhost:9001:localhost:9001 insulaudit@bewest.io $TOOL $SESSION $USER"
+ssh_hint="$dropbear_args -R localhost:$LC_AUDIT_PORT:localhost:$LC_AUDIT_PORT $AUDIT_USER@$AUDITHOST $TOOL $SESSION $USER"
 echo "now run ssh $ssh_hint"
 $SOCAT $SOCAT_ARGS &
 
 exec ssh $ssh_hint
-nc localhost 9001
+echo '' | nc localhost $LC_AUDIT_PORT
 #####
 # EOF

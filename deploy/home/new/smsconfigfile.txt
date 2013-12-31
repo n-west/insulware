@@ -10,10 +10,11 @@ page=audit.php
 userid=
 key=288243439
 
-[serialToNet]
-audit=medevice://@bewest.io:9001/insulaudit
-addr=bewest.io
+[auditor]
+user=insulaudit
+address=bewest.io
 port=9001
+key=
 
 [registration]
 addr=bewest.io
